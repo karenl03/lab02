@@ -1,10 +1,19 @@
-from flask import Flask, render_template #function is render template
+from flask import Flask, render_template 
+from sklearn.externals import joblib
+import numpy as np
 
-app = Flask(__name__) #creating new usable instance of Flask class and saves to variable app
 
-@app.route("/") #map URL "/" to python function index
-def index(): #uses flask  to render index.html
-	return render_template("index.html")
-if __name__ == "__main__": #when user types url "/", function will run and return to page index.html
-	app.run(debug=True) #will see any error messages
+app = Flask(__name__) 
+
+@app.route("/") 
+
+
+def index(): 
+	prediction = model.predict([[4, 2.5, 3005, 15, 17903.0]]).round(1)
+	prediction = np.squeeze(prediction.tolist())
+	prediction = str(prediction)
+	return render_template("index.html", prediction=prediction)
+if __name__ == '__main__':
+    model = joblib.load('reg.pkl')
+    app.run(debug=True)
 
