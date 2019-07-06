@@ -3,5 +3,16 @@ Flask==1.0.3
 gunicorn==19.9.0
 itsdangerous==1.1.0
 Jinja2==2.10.1
+joblib==0.13.2
+jupyter-client==5.2.4
+jupyter-core==4.5.0
 MarkupSafe==1.1.1
+matplotlib==2.2.3
+notebook==5.7.8
+numpy==1.15.0
+pandas==0.24.2
+pandocfilters==1.4.2
+pickleshare==0.7.5
+PySocks==1.6.8
+python-dateutil==2.7.3
 Werkzeug==0.15.4
